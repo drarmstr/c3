@@ -1,0 +1,274 @@
+﻿svg.c4 {
+//    shape-rendering: optimizeSpeed;
+//    shape-rendering: crispEdges;
+}
+
+svg.c4.global {
+    position: fixed; // Workaround for IE11: It does not use height:0 properly and scrollbars can appear
+    height: 0;
+    width: 0;
+}
+
+.no-highlight {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.clearfix {
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+
+////////////////////////////////////////////////////////////////
+
+.c4.dash {
+    @dash_label_width: 6em;
+
+    .dash-section {
+        position: relative;
+
+        .dash-header {
+            .no-highlight;
+            .clearfix;
+            cursor: pointer;
+            z-index: 1;
+            font-weight: bold;
+        }
+
+        .dash-label {
+            .dash-header;
+            position: absolute;
+            width: @dash_label_width;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .dash-arrow {
+            display: inline-block;
+            margin-right: 0.25em;
+        }
+
+        .dash-row {
+            margin-left: @dash_label_width;
+        }
+
+        .dash-body {
+            &.dash-body-label {
+                .dash-label;
+                cursor: default;
+            }
+            &.dash-body-pad {
+                margin-left: @dash_label_width;
+            }
+        }
+    }
+}
+
+
+.c4.chart {
+    .no-highlight;
+    overflow: hidden;
+}
+
+
+.c4 g.axis {
+    shape-rendering: crispEdges;
+    text.label {
+        text-anchor: middle;
+        font-weight: bold;
+    }
+    line {
+        stroke: black;
+    }
+}
+
+
+.c4.plot {
+    &.zoom_chart {
+        cursor: col-resize;
+        g.layer {
+            &.sampled {
+                shape-rendering: crispEdges;
+            }
+        }
+        .scaled {
+            rect, line {
+                vector-effect: non-scaling-stroke;
+                shape-rendering: crispEdges;
+            }
+            path { vector-effect: non-scaling-stroke; }
+        }
+
+        line.select_value {
+            vector-effect: non-scaling-stroke;
+            shape-rendering: crispEdges;
+            pointer-events: none;
+        }
+    }
+    &.select_chart {
+        .brush { fill: none; }
+    }
+
+    .layer {
+        &.line {
+            path {
+                fill: none;
+            }
+        }
+        &.straight {
+            shape-rendering: crispEdges;
+            text {
+                pointer-events: none;
+            }
+        }
+
+        &.scatter {
+            text {
+                text-anchor: middle;
+                alignment-baseline: middle;
+                pointer-events: none;
+            }
+        }
+
+        &.segment {
+            text {
+                alignment-baseline: middle;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+
+.c4.sunburst {
+    path {
+        cursor: pointer;
+    }
+
+    circle {
+        pointer-events: none;
+        fill: none;
+    }
+
+    line.select_radian {
+        pointer-events: none;
+    }
+}
+
+
+.c4.graph {
+    line {
+        pointer-events: none;
+        // This is escaped to avoid Less from adding relative paths when importing this file
+        marker-end: ~"url(#arrow_head)";
+
+        &.decimated {
+            marker-end: ~"url(#arrow_head_decimated)";
+        }
+
+        &.select_path {
+            marker-end: ~"url(#arrow_head_select_path)";
+        }
+    }
+}
+
+.c4.butterfly {
+    g.nodes {
+        rect {
+            shape-rendering: crispEdges;
+            cursor: pointer;
+        }
+        text {
+            cursor: pointer;
+        }
+    }
+    path {
+        fill: none;
+    }
+}
+
+
+.c4.table {
+    border-collapse: collapse;
+
+    th {
+        .no-highlight;
+        cursor: default;
+
+        &.sortable {
+            cursor: pointer;
+
+            .ui-icon {
+                margin-left: 0.25em;
+            }
+        }
+    }
+
+    td {
+        div.bar {
+            margin: 1px 0 1px 0;
+            background-color: lightgray;
+            border-radius: 0.4em;
+        }
+    }
+
+    &.selectable {
+        .no-highlight;
+    }
+}
+
+
+ul.c4.legend {
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 0.5em;
+
+    cursor: default;
+    .no-highlight;
+    list-style-type: none;
+    
+    color: white;
+    background: #404040;
+    font-family: sans-serif;
+
+    ul { // Nested Lists
+         padding-left: 0.25em;
+         list-style-type: inherit;
+    }
+
+    li { // List Items
+//        white-space: nowrap;
+        line-height: 95%;
+        padding: 0.25em 0.5em 0.25em 0.5em;
+        overflow: hidden;
+
+        > .bullet {
+            margin-right: 0.5em;
+            > svg {
+                shape-rendering: crispEdges;
+            }
+        }
+    }
+
+    &.hoverable li:hover {
+        background: rgba(255,255,255,0.2);
+        border-radius: 0.25em;
+    }
+}
+
+///////////////////////////////////////////////////////////
+
+.c4.swatch {
+    display: inline-block;
+    overflow: hidden;
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,0.2);
+}

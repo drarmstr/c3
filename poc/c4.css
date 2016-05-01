@@ -1,0 +1,242 @@
+﻿svg.c4.global {
+  position: fixed;
+  height: 0;
+  width: 0;
+}
+.no-highlight {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.c4.dash .dash-section {
+  position: relative;
+}
+.c4.dash .dash-section .dash-header {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: bold;
+}
+.c4.dash .dash-section .dash-header:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.c4.dash .dash-section .dash-label {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  font-weight: bold;
+  position: absolute;
+  width: 6em;
+  overflow: hidden;
+  z-index: 1;
+}
+.c4.dash .dash-section .dash-label:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.c4.dash .dash-section .dash-arrow {
+  display: inline-block;
+  margin-right: 0.25em;
+}
+.c4.dash .dash-section .dash-row {
+  margin-left: 6em;
+}
+.c4.dash .dash-section .dash-body.dash-body-label {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  font-weight: bold;
+  position: absolute;
+  width: 6em;
+  overflow: hidden;
+  z-index: 1;
+  cursor: default;
+}
+.c4.dash .dash-section .dash-body.dash-body-label:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.c4.dash .dash-section .dash-body.dash-body-pad {
+  margin-left: 6em;
+}
+.c4.chart {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+.c4 g.axis {
+  shape-rendering: crispEdges;
+}
+.c4 g.axis text.label {
+  text-anchor: middle;
+  font-weight: bold;
+}
+.c4 g.axis line {
+  stroke: black;
+}
+.c4.plot.zoom_chart {
+  cursor: col-resize;
+}
+.c4.plot.zoom_chart g.layer.sampled {
+  shape-rendering: crispEdges;
+}
+.c4.plot.zoom_chart .scaled rect,
+.c4.plot.zoom_chart .scaled line {
+  vector-effect: non-scaling-stroke;
+  shape-rendering: crispEdges;
+}
+.c4.plot.zoom_chart .scaled path {
+  vector-effect: non-scaling-stroke;
+}
+.c4.plot.zoom_chart line.select_value {
+  vector-effect: non-scaling-stroke;
+  shape-rendering: crispEdges;
+  pointer-events: none;
+}
+.c4.plot.select_chart .brush {
+  fill: none;
+}
+.c4.plot .layer.line path {
+  fill: none;
+}
+.c4.plot .layer.straight {
+  shape-rendering: crispEdges;
+}
+.c4.plot .layer.straight text {
+  pointer-events: none;
+}
+.c4.plot .layer.scatter text {
+  text-anchor: middle;
+  alignment-baseline: middle;
+  pointer-events: none;
+}
+.c4.plot .layer.segment text {
+  alignment-baseline: middle;
+  pointer-events: none;
+}
+.c4.sunburst path {
+  cursor: pointer;
+}
+.c4.sunburst circle {
+  pointer-events: none;
+  fill: none;
+}
+.c4.sunburst line.select_radian {
+  pointer-events: none;
+}
+.c4.graph line {
+  pointer-events: none;
+  marker-end: url(#arrow_head);
+}
+.c4.graph line.decimated {
+  marker-end: url(#arrow_head_decimated);
+}
+.c4.graph line.select_path {
+  marker-end: url(#arrow_head_select_path);
+}
+.c4.butterfly g.nodes rect {
+  shape-rendering: crispEdges;
+  cursor: pointer;
+}
+.c4.butterfly g.nodes text {
+  cursor: pointer;
+}
+.c4.butterfly path {
+  fill: none;
+}
+.c4.table {
+  border-collapse: collapse;
+}
+.c4.table th {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+.c4.table th.sortable {
+  cursor: pointer;
+}
+.c4.table th.sortable .ui-icon {
+  margin-left: 0.25em;
+}
+.c4.table td div.bar {
+  margin: 1px 0 1px 0;
+  background-color: lightgray;
+  border-radius: 0.4em;
+}
+.c4.table.selectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+ul.c4.legend {
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 0.5em;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+  list-style-type: none;
+  color: white;
+  background: #404040;
+  font-family: sans-serif;
+}
+ul.c4.legend ul {
+  padding-left: 0.25em;
+  list-style-type: inherit;
+}
+ul.c4.legend li {
+  line-height: 95%;
+  padding: 0.25em 0.5em 0.25em 0.5em;
+  overflow: hidden;
+}
+ul.c4.legend li > .bullet {
+  margin-right: 0.5em;
+}
+ul.c4.legend li > .bullet > svg {
+  shape-rendering: crispEdges;
+}
+ul.c4.legend.hoverable li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0.25em;
+}
+.c4.swatch {
+  display: inline-block;
+  overflow: hidden;
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+/*# sourceMappingURL=c4.css.map */
